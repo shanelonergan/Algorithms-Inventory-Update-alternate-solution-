@@ -8,11 +8,15 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 function updateInventory(arr1, arr2) {
 
   arr2.forEach(function(element, index, array) {
-    console.log(element)
+    console.log(index)
+
+    const item = element[1]
+    const quantity = element[0]
+    console.log(item, quantity)
   })
     
   const inventory = [].concat.apply([], arr1);
-  console.log(inventory)
+  // console.log(inventory)
 
   for (let i = 0; i < arr2.length; i++) {
     // extract item properties for easy reference

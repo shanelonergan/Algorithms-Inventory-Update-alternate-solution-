@@ -6,8 +6,13 @@ const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 function updateInventory(arr1, arr2) {
+
+  arr2.forEach(function(element, index, array) {
+    console.log(element)
+  })
     
   const inventory = [].concat.apply([], arr1);
+  console.log(inventory)
 
   for (let i = 0; i < arr2.length; i++) {
     // extract item properties for easy reference
@@ -27,6 +32,7 @@ function updateInventory(arr1, arr2) {
     // alien item: add to inventory
     arr1.push([quantity, item]);
   }
+
 }
 
 // Example inventory lists
@@ -43,3 +49,5 @@ var newInv = [
     [67, "Bowling Ball"],
     [7, "Toothpaste"]
 ];
+
+updateInventory(curInv, newInv);

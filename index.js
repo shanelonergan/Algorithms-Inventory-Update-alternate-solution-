@@ -19,27 +19,19 @@ function updateInventory(arr1, arr2) {
 
     const position = inventory.indexOf(element)
     console.log(position)
-  })
 
-  for (let i = 0; i < arr2.length; i++) {
-    // extract item properties for easy reference
-    const item = arr2[i][1];
-    const quantity = arr2[i][0];
-
-    // check if item already exists in inventory
-    const position = inventory.indexOf(item);
-
-    // exsisting item: update quantity
     if (position !== -1) {
       const row = Math.floor(position / 2);
       arr1[row][0] += quantity;
-      continue;
     }
 
     // alien item: add to inventory
     arr1.push([quantity, item]);
-  }
+  })
 
+  arr1.sort((previous, next) => (previous[1] > [next[1]] ? 1 : -1));
+
+  return arr1;
 }
 
 // Example inventory lists

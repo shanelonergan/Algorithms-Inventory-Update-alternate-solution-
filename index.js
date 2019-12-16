@@ -8,21 +8,17 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 function updateInventory(arr1, arr2) {
 
   const inventory = [].concat.apply([], arr1);
-  console.log(inventory)
 
   arr2.forEach(function(element, index, array) {
-    // console.log(index)
 
     const item = element[1]
     const quantity = element[0]
-    // console.log(item, quantity)
 
     const position = inventory.indexOf(item)
     console.log(position)
 
-    if (position !== 1) {
+    if (position !== -1) {
       const row = Math.floor(position / 2);
-      console.log(row, 'row')
       arr1[row][0] += quantity;
     } else {
       arr1.push([quantity, item]);
